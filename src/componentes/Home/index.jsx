@@ -28,6 +28,19 @@ export default function Home() {
     }
     // console.log(numero);
 
+    function troca1(item){
+        var name = 'erro';
+        if(name === item.name){
+            setAcertos(acertos + 1);
+
+        }else{
+            setErros(erros + 1)
+
+        }
+        var num = numero + 1;
+        setNumero(num);
+    }
+
 
     return (
 
@@ -46,10 +59,10 @@ export default function Home() {
 
                                 <div className="button">
                                     <button onClick={() => troca(item.name)}>{item.name}</button>
-                                    <button onClick={() => troca(item.name)}>Mew</button>
-                                    <button onClick={() => troca(item.name)}>Vitor</button>
-                                    <button onClick={() => troca(item.name)}>Eu</button>
-                                    <button onClick={() => troca(item.name)}>{item.name}</button>
+                                    <button onClick={() => troca1(item)}>Bulbasaur</button>
+                                    <button onClick={() => troca1(item)}>Squirtle</button>
+                                    <button onClick={() => troca1(item)}>Charmander</button>
+                                    <button onClick={() => troca1(item)}>Wartortle</button>
 
                                 </div>
 
@@ -61,7 +74,7 @@ export default function Home() {
 
                 {
                     numero === 6 && 
-                    <h1>Você finalizou</h1>
+                    <h1>Você acertou {acertos} de 5</h1>
                 }
             </div>
 
