@@ -11,6 +11,7 @@ export default function Home() {
     const [acertos, setAcertos] = useState(0);
     const [erros, setErros] = useState(0);
 
+
     //    console.log(api.name)
 
     function troca(item) {
@@ -28,12 +29,12 @@ export default function Home() {
     }
     // console.log(numero);
 
-    function troca1(item){
+    function troca1(item) {
         var name = 'erro';
-        if(name === item.name){
+        if (name === item.name) {
             setAcertos(acertos + 1);
 
-        }else{
+        } else {
             setErros(erros + 1)
 
         }
@@ -55,7 +56,10 @@ export default function Home() {
                         return (
                             item.id === numero &&
                             <div className="pokemon">
-                                <img src={item.img} alt="imagem pokemon" />
+
+                                <figure>
+                                    <img src={item.img} alt="imagem pokemon" />
+                                </figure>
 
                                 <div className="button">
                                     <button onClick={() => troca(item.name)}>{item.name}</button>
@@ -72,10 +76,8 @@ export default function Home() {
                     })
                 }
 
-                {
-                    numero === 6 && 
-                    <h1>Você acertou {acertos} de 5</h1>
-                }
+                { numero === 6 && <h1>Você acertou {acertos} de 5</h1> }
+
             </div>
 
         </div>
